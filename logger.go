@@ -7,8 +7,8 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// Logger is a global logger object
-var Logger log.FieldLogger // Global logger object
+// Log is a global logger object
+var Log log.FieldLogger // Global logger object
 
 func init() {
 	if os.Getenv("LOG_FORMAT") == "json" { // Fluentd field name conventions
