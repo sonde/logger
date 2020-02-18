@@ -40,7 +40,7 @@ func init() {
 	} else {
 		log.SetLevel(log.ErrorLevel)
 	}
-	fmt.Printf("Level: %v, Err: %v\n", level, err)
+	fmt.Printf("LEVEL: %v, ERR: %v\n", level, err)
 
 	Log = log.WithFields(log.Fields{
 		"@version": "1",
