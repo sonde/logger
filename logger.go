@@ -36,7 +36,7 @@ func init() {
 	level, _ := log.ParseLevel(os.Getenv("LOG_LEVEL"))
 	log.SetLevel(level)
 
-	Logger = log.WithFields(log.Fields{
+	Log = log.WithFields(log.Fields{
 		"@version": "1",
 		"logger":   "kpi-uploader",
 	})
