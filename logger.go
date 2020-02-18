@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"fmt"
 	"os"
 	"time"
 
@@ -33,7 +34,9 @@ func init() {
 
 	// Logrus has seven log levels:
 	// Trace, Debug, Info, Warning, Error, Fatal and Panic.
-	level, _ := log.ParseLevel(os.Getenv("LOG_LEVEL"))
+	log.SetLevel(log.ErrorLevel)
+	level, err := log.ParseLevel(os.Getenv("LOG_LEVEL"))
+	fmt.Printf("Level: %v, Err: %v\n", level, err)
 	log.SetLevel(level)
 
 	Log = log.WithFields(log.Fields{
