@@ -35,6 +35,7 @@ func init() {
 	// Logrus has seven log levels:
 	// Trace, Debug, Info, Warning, Error, Fatal and Panic.
 	level, err := log.ParseLevel(os.Getenv("LOG_LEVEL"))
+	fmt.Printf("Level 0: %v/%v, ERR: %v\n", level, log.GetLevel(), err)
 	if err != nil {
 		log.SetLevel(level)
 		fmt.Printf("Level 1: %v/%v, ERR: %v\n", level, log.GetLevel(), err)
