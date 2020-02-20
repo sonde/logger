@@ -1,7 +1,6 @@
 package logger
 
 import (
-	"fmt"
 	"os"
 	"time"
 
@@ -35,15 +34,11 @@ func init() {
 	// Logrus has seven log levels:
 	// Trace, Debug, Info, Warning, Error, Fatal and Panic.
 	level, err := log.ParseLevel(os.Getenv("LOG_LEVEL"))
-	fmt.Printf("Level a: Loglevel is: %v, LOG_LEVEL specifies: %v, ERR is: %v\n", log.GetLevel(), level, err)
 	if err != nil {
 		log.SetLevel(log.ErrorLevel)
-		fmt.Printf("Level b: Due to error Loglevel is set to default Err loglevel: %v\n", log.ErrorLevel)
 	} else {
 		log.SetLevel(level)
-		fmt.Printf("Level b: We set Loglevel to LOG_LEVEL: %v\n", level)
 	}
-	fmt.Printf("LEVEL is %v\n", log.GetLevel())
 
 	Log = log.WithFields(log.Fields{
 		"@version": "1",
