@@ -40,7 +40,7 @@ func init() {
 		fmt.Printf("Level 1: %v/%v, ERR: %v\n", level, log.GetLevel(), err)
 	} else {
 		log.SetLevel(log.ErrorLevel)
-		fmt.Printf("Level 1: %v/%v, ERR: %v\n", level, log.GetLevel(), err)
+		fmt.Printf("Level 2: %v/%v, ERR: %v\n", level, log.GetLevel(), err)
 	}
 	fmt.Printf("LEVEL: %v/%v, ERR: %v\n", level, log.GetLevel(), err)
 
