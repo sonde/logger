@@ -8,11 +8,12 @@ import (
 )
 
 // Log is a global logger object
-var Log log.FieldLogger // Global logger object
+var Log log.FieldLogger
 
 func init() {
-	if os.Getenv("LOG_FORMAT") == "json" { // Fluentd field name conventions
+	if os.Getenv("LOG_FORMAT") == "json" {
 
+		// Fluentd field name conventions
 		log.SetFormatter(&log.JSONFormatter{
 			TimestampFormat: time.RFC3339Nano,
 			FieldMap: log.FieldMap{
@@ -24,9 +25,11 @@ func init() {
 		})
 		log.SetReportCaller(true)
 
-	} else if os.Getenv("LOG_FORMAT") == "json_plain" { // Logrus field names
+	} else if os.Getenv("LOG_FORMAT") == "json_plain" {
+		// Use standard Logrus field name conventions
 		log.SetFormatter(&log.JSONFormatter{})
 	}
+
 	if os.Getenv("LOG_STDOUT") == "true" {
 		log.SetOutput(os.Stdout)
 	}
